@@ -1,6 +1,6 @@
 # 01 — MVP visual Arcade Vault
 
-**Estado:** aprovado
+**Estado:** Implementado
 **Dependencias:** Ninguna (primer spec del proyecto)
 **Fecha:** 2026-07-20
 
@@ -119,20 +119,20 @@ No se introducen otras estructuras: sin API routes, sin esquema de base de datos
 
 ## Criterios de aceptación
 
-- [ ] `/` renderiza el hero, el buscador, los chips de categoría y el grid de `GameCard` con los 8 juegos de `GAMES`; filtrar por texto y por categoría actualiza el grid sin recargar la página.
-- [ ] Cada `GameCard` aplica el efecto de inclinación 3D al mover el mouse encima y vuelve a su estado normal al salir.
-- [ ] `/juegos/[id]` muestra la portada, tags, descripción larga, stats (partidas, mejor global, dificultad) y el leaderboard lateral con 10 filas generadas por `seededScores`; un `id` inexistente dispara `notFound()`.
-- [ ] Desde `/juegos/[id]`, el botón "Jugar ahora" navega a `/juegos/[id]/jugar` y "Volver al Vault" navega a `/`.
-- [ ] `/juegos/[id]/jugar` muestra el HUD (jugador, puntuación, vidas, nivel) con valores fijos, el área CRT sin ningún bucle de juego activo, y el botón "Pausa" alterna un overlay visual "EN PAUSA" sin afectar ningún temporizador real.
-- [ ] Al pulsar "Fin" en el reproductor se abre el modal de fin de partida con una puntuación fija; ingresar iniciales y pulsar "Guardar puntuación" persiste un registro en `localStorage` (`av_scores`) vía `lib/session.ts` y cambia el modal al estado "PUNTUACIÓN GUARDADA_".
-- [ ] `/ranking` muestra los tabs por juego, el podio (top 3) y la tabla completa de puntuaciones para el juego seleccionado, generados por `seededScores`; cambiar de tab actualiza podio y tabla.
-- [ ] Si hay una sesión activa (`av_user` en `localStorage`), `/ranking` muestra la fila adicional "tu mejor marca"; si no hay sesión, esa fila no aparece.
-- [ ] `/login` permite alternar entre las pestañas "Iniciar sesión" y "Crear cuenta", enviar el formulario o pulsar "Jugar como invitado" escribe la sesión en `localStorage` (`av_user`) y redirige a `/`.
-- [ ] Con sesión activa, el `Nav` muestra el nombre de usuario en vez del botón "Iniciar sesión"; cerrar sesión limpia `av_user` y el `Nav` vuelve a mostrar "Iniciar sesión".
-- [ ] El menú móvil (hamburguesa) del `Nav` abre y cierra el panel lateral con los mismos links que la versión de escritorio.
-- [ ] Ninguna de las 5 rutas requiere sesión iniciada para ser accesible.
-- [ ] `npm run lint` y `npm run build` (Turbopack) terminan sin errores.
-- [ ] La paleta de colores, el grid de fondo animado, las scanlines y las animaciones (`flicker`, `blink`, `pulse`) están presentes en todas las pantallas, migradas como tokens/utilities de Tailwind v4.
+- [x] `/` renderiza el hero, el buscador, los chips de categoría y el grid de `GameCard` con los 8 juegos de `GAMES`; filtrar por texto y por categoría actualiza el grid sin recargar la página.
+- [x] Cada `GameCard` aplica el efecto de inclinación 3D al mover el mouse encima y vuelve a su estado normal al salir.
+- [x] `/juegos/[id]` muestra la portada, tags, descripción larga, stats (partidas, mejor global, dificultad) y el leaderboard lateral con 10 filas generadas por `seededScores`; un `id` inexistente dispara `notFound()`.
+- [x] Desde `/juegos/[id]`, el botón "Jugar ahora" navega a `/juegos/[id]/jugar` y "Volver al Vault" navega a `/`.
+- [x] `/juegos/[id]/jugar` muestra el HUD (jugador, puntuación, vidas, nivel) con valores fijos, el área CRT sin ningún bucle de juego activo, y el botón "Pausa" alterna un overlay visual "EN PAUSA" sin afectar ningún temporizador real.
+- [x] Al pulsar "Fin" en el reproductor se abre el modal de fin de partida con una puntuación fija; ingresar iniciales y pulsar "Guardar puntuación" persiste un registro en `localStorage` (`av_scores`) vía `lib/session.ts` y cambia el modal al estado "PUNTUACIÓN GUARDADA_".
+- [x] `/ranking` muestra los tabs por juego, el podio (top 3) y la tabla completa de puntuaciones para el juego seleccionado, generados por `seededScores`; cambiar de tab actualiza podio y tabla.
+- [x] Si hay una sesión activa (`av_user` en `localStorage`), `/ranking` muestra la fila adicional "tu mejor marca"; si no hay sesión, esa fila no aparece.
+- [x] `/login` permite alternar entre las pestañas "Iniciar sesión" y "Crear cuenta", enviar el formulario o pulsar "Jugar como invitado" escribe la sesión en `localStorage` (`av_user`) y redirige a `/`.
+- [x] Con sesión activa, el `Nav` muestra el nombre de usuario en vez del botón "Iniciar sesión"; cerrar sesión limpia `av_user` y el `Nav` vuelve a mostrar "Iniciar sesión".
+- [x] El menú móvil (hamburguesa) del `Nav` abre y cierra el panel lateral con los mismos links que la versión de escritorio.
+- [x] Ninguna de las 5 rutas requiere sesión iniciada para ser accesible.
+- [x] `npm run lint` y `npm run build` (Turbopack) terminan sin errores.
+- [x] La paleta de colores, el grid de fondo animado, las scanlines y las animaciones (`flicker`, `blink`, `pulse`) están presentes en todas las pantallas, migradas como tokens/utilities de Tailwind v4.
 
 ## Decisiones tomadas y descartadas
 

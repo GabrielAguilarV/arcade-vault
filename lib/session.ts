@@ -11,13 +11,24 @@ const USER_KEY = "av_user";
 const SCORES_KEY = "av_scores";
 const SESSION_EVENT = "av-session-changed";
 
+// Cachea el snapshot para que getSessionUser devuelva la misma referencia
+// mientras el valor crudo en localStorage no cambie. Es imprescindible para
+// useSyncExternalStore: si cada llamada devolviera un objeto nuevo (por el
+// JSON.parse), React vería "cambios" en cada render y entraría en loop.
+let cachedRaw: string | null = null;
+let cachedUser: SessionUser | null = null;
+
 export function getSessionUser(): SessionUser | null {
   if (typeof window === "undefined") return null;
+  const raw = window.localStorage.getItem(USER_KEY);
+  if (raw === cachedRaw) return cachedUser;
+  cachedRaw = raw;
   try {
-    return JSON.parse(window.localStorage.getItem(USER_KEY) || "null");
+    cachedUser = raw ? JSON.parse(raw) : null;
   } catch {
-    return null;
+    cachedUser = null;
   }
+  return cachedUser;
 }
 
 export function setSessionUser(user: SessionUser | null): void {
