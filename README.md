@@ -14,3 +14,13 @@ https://github.com/Klerith/fernando-skills
 ```bash
 npx skills@latest add Klerith/fernando-skills
 ```
+
+
+## Commands
+
+```bash
+npm run dev      # start dev server (Turbopack, on by default in Next 16)
+npm run build    # production build (Turbopack by default; fails if a webpack config is present — see below)
+npm run start    # run the production build
+npm run lint     # ESLint (flat config, eslint-config-next)
+``` 

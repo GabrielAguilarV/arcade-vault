@@ -10,18 +10,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 The README states the project intends to follow a **Spec Driven Design** workflow (`/spec` and `/spec-impl`) via the `Klerith/fernando-skills` skills package (installed with `npx skills@latest add Klerith/fernando-skills`). That package is not yet installed in this repo — check for a `.claude/` skills directory or `/spec*` commands before assuming it's available.
 
-## Commands
-
-```bash
-npm run dev      # start dev server (Turbopack, on by default in Next 16)
-npm run build    # production build (Turbopack by default; fails if a webpack config is present — see below)
-npm run start    # run the production build
-npm run lint     # ESLint (flat config, eslint-config-next)
-```
 
 There is no test runner configured in `package.json` yet — don't assume Jest/Vitest exist; check before referencing test commands.
 
 Note: `next dev` now writes to `.next/dev` and `next build` to `.next/` separately, so both can run concurrently.
+
+## Skills
+usa siempre /frontend-design cuando requieras hacer diseños o interfaces de usuario
 
 ## Architecture
 
