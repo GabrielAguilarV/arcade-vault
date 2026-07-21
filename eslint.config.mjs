@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Material de referencia del template original (spec 01-mvp-visual):
+    // JSX de script global sin imports, no forma parte de la app Next.js.
+    "references/**",
   ]),
 ]);
 

@@ -1,3 +1,5 @@
+import LibraryFilters from "@/components/LibraryFilters";
+
 export default function Home() {
   return (
     <main className="av-main fade-in">
@@ -7,6 +9,7 @@ export default function Home() {
           INSERTA UNA MONEDA PARA JUGAR <span className="blink">_</span>
         </div>
       </section>
+      <LibraryFilters />
     </main>
   );
 }
